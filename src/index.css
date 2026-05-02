@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Quicksand", "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-rosa-primary: #ff00bf;
+  --color-roxo-primary: #aa00ff;
+  --color-amarelo-primary: #ffbf00;
+  
+  --color-rosa-light: #ff66d9;
+  --color-roxo-light: #c266ff;
+  --color-amarelo-light: #ffd966;
+
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-sparkle: sparkle 2s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-pink-50 text-gray-900;
+    font-variant-ligatures: none;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 rounded-3xl shadow-xl;
+}
+
+.modal-overlay {
+  @apply fixed inset-0 z-[100] bg-black/60 backdrop-blur-md flex items-center justify-center p-4 md:p-8;
+}
+
+.modal-content {
+  @apply w-full max-w-5xl h-[90vh] bg-white rounded-[40px] overflow-hidden flex flex-col shadow-2xl relative;
+}
+
+.btn-primary {
+  @apply bg-rosa-primary text-white font-bold py-3 px-6 rounded-full transition-all transform hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2;
+}
+.btn-primary:hover {
+  background-color: var(--color-rosa-primary) !important;
+}
+
+.btn-secondary {
+  @apply bg-roxo-primary text-white font-bold py-3 px-6 rounded-full transition-all transform hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2;
+}
+.btn-secondary:hover {
+  background-color: var(--color-roxo-primary) !important;
+}
+
+.btn-accent {
+  @apply bg-amarelo-primary text-white font-bold py-3 px-6 rounded-full transition-all transform hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2;
+}
+.btn-accent:hover {
+  background-color: var(--color-amarelo-primary) !important;
+}
+
+.title-sparkle {
+  @apply relative inline-block;
+}
+
+.title-sparkle::after {
+  content: '✨';
+  @apply absolute -top-4 -right-6 animate-sparkle text-2xl;
+}
+
+.title-sparkle::before {
+  content: '⭐';
+  @apply absolute -bottom-2 -left-6 animate-float text-xl;
+}

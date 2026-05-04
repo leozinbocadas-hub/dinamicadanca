@@ -772,7 +772,7 @@ export default function App() {
                 <DashboardStat
                   icon={Gift}
                   label="Bônus"
-                  value={user.plan === 'premium' ? dynamics.filter(d => d.category === 'Bônus').length.toString() : "0"}
+                  value={user.plan !== 'basic' ? dynamics.filter(d => d.category === 'Bônus').length.toString() : "0"}
                   color="bg-amarelo-primary"
                 />
               </div>
@@ -782,7 +782,7 @@ export default function App() {
                 <SectionTitle icon={Heart}>Destaques</SectionTitle>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
                   {dynamics
-                    .filter(d => user.plan === 'premium' || d.category === 'Principal')
+                    .filter(d => user.plan !== 'basic' || d.category === 'Principal')
                     .slice(0, 2)
                     .map((dynamic) => (
                       <div key={dynamic.id}>
@@ -807,7 +807,7 @@ export default function App() {
               <SectionTitle icon={BookOpen}>Biblioteca</SectionTitle>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {dynamics
-                  .filter(d => user.plan === 'premium' || d.category === 'Principal')
+                  .filter(d => user.plan !== 'basic' || d.category === 'Principal')
                   .map((dynamic) => (
                     <div key={dynamic.id}>
                       <DynamicCard

@@ -996,7 +996,7 @@ export default function App() {
                 <div className="glass-card overflow-hidden group border-2 border-transparent hover:border-rosa-primary/30 transition-all flex flex-col md:flex-row">
                   <div className="md:w-1/3 h-48 md:h-auto overflow-hidden">
                     <img 
-                      src="https://i.ibb.co/BH3VYTkW/488f22b5-6c66-4cc1-9a40-fe7f8ba99fb1-1777759548383.avif" 
+                      src="https://i.ibb.co/zWWfcGVD/16a634c1-b368-4daa-bc29-07cd6e2629f7.png" 
                       alt="Pack Gospel Kids - Dinâmicas e Coreografias Cristãs" 
                       className="w-full h-full object-cover transition-transform group-hover:scale-105"
                     />
